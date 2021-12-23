@@ -10,7 +10,7 @@ images:
   - img/music-black-hole.jpg
 image_left: false
 text_align_left: true
-show_social_links: false # specify social accounts in site config
+show_social_links: false    # specify social accounts in site config
 show_action_link: true
 action_link: /about
 action_label: "Read More &rarr;"

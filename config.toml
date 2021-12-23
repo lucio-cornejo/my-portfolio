@@ -34,7 +34,7 @@ enableEmoji = true
   favicon = "/img/yoshi-icon-2.ico" # icon for broswer tab of website # More examples at https://iconarchive.com/search?q=
   logo = "/img/icons8-home-50.png"  # symbol for home page 
   mainSections = ["blog", "project", "talk"]
-  navallcaps = true
+  navallcaps = false
   # show/hide social icons in site header & footer
   # configure social icons and links below in [[params.social]]
   socialInHeader = true
@@ -48,14 +48,14 @@ enableEmoji = true
   # use a built-in color theme
   # one of: forest / grayscale / peach / plum /
   #         poppy / sky / violet / water 
-  theme = "water"
+  theme = ""    # "water"
   
   # or, leave theme empty & make your own palette
   # see docs at https://hugo-apero.netlify.app/blog/color-themes/
   # the custom scss file must be in the assets/ folder
   # add the filename name here, without extension
   # to use hex colors instead of named tachyons colors, include "hex" in filename
-  custom_theme = "" # "my-theme" 
+  custom_theme = "my-theme" 
   
   # use an embedded font-family
   # serif options: Fraunces / EB Garamond / Bitter
