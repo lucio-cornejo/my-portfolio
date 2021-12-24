@@ -16,16 +16,17 @@ $buttonHoverBgColorCustom: #14303C;
 $borderColorCustom: #76B0B9;
 /////////////////////////////////////
 
+
 //////////// My theme  /////////////
 
-// Image in Home section
+//// Image in Home section ////
 section.page-content div.tr  {
     background: url(img/music-black-hole.jpg) left top no-repeat;
     box-shadow: 30px 30px 20px -10px #f4f4f4 inset, -60px -15px 20px 0 #f4f4f4 inset; 
     > img { visibility: hidden; } // hide image displayed via R Markdown in content/_index.md
 }
 
-// Header section
+//// Header section ////
 
 header.site-header {
     background-color: rgba(24, 140, 255, 0.6);
@@ -50,7 +51,7 @@ div.social-icon-links > a {
     margin-right: 20px;
 }
 
-// About section
+//// About section ////
 
 h2.about-main { margin-top: -69px; }
 
@@ -58,6 +59,4 @@ sidebar[id="profile"] {
     background-color: rgba(255, 170, 170, 0.5);
 }
 
-
- 
 /////////////////////////////////////
