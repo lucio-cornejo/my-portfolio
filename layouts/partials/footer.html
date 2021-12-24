@@ -18,8 +18,23 @@
       {{ end }}
     </div>
   </nav>
+
+  <!-- Yihui's solution for blogdown site to include MathJax (not all Hugo themes do natively) -->
   <script src="//yihui.org/js/math-code.js"></script>
     <script async
       src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
+
+  <!-- Styling for the output of code chunks -->
+  <script>
+    let codigo, chunk_output;
+    codigo = Array.prototype.slice.call(document.querySelectorAll('pre'));
+    chunk_output = codigo.filter(e => e.children[0].tagName=='CODE');
+    chunk_output.forEach(function(e) {
+      if(e.style.backgroundColor.length == 0) {
+        e.style.backgroundColor = "gray";
+        e.style.color = "white";
+      }
+    });
+  </script>
 </footer>

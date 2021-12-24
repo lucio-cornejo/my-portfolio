@@ -6,6 +6,9 @@ description: |
   to share knowledge from a diverse set of niche topics I like.  
   I hope that you find something interesting to read in my website.
 date: 2019-02-18T12:27:33-06:00
+includes:
+  in_header:
+    - "test-script.html"
 images:
   - img/music-black-hole.jpg
 image_left: false

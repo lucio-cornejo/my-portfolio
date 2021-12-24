@@ -399,4 +399,6 @@ Fixes while dealing with hugo apero:
 
   - for the custom theme to work, create a folder assets in /my-portfolio/ and include a scss file for the custom theme.
 
+  - include custom scripts (js) in the footer.html added for Yihui's MathJax library inclusion.
+
 -->
