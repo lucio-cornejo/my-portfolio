@@ -11,8 +11,8 @@ options(
   blogdown.serve_site.startup = FALSE,
   # to disable knitting Rmd files on save, set this option to FALSE
   blogdown.knit.on_save = FALSE,
-  # full markdown mode
-  blogdown.method = "markdown"
+  # full markdown mode  # you can change it to "html" if the Rmd files require complex Pandoc tools
+  blogdown.method = "markdown" # "markdown"
 )
 
 # pin Hugo version

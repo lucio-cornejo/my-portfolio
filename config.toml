@@ -25,7 +25,7 @@ enableEmoji = true
     ordered = false
   [markup.highlight]
     # one of: https://xyproto.github.io/splash/docs/ 
-    style = "github"
+    style = "dracula" # dracula, paraiso-dark, github
     
 [params]
   orgName = "Yoshi"
@@ -102,7 +102,7 @@ enableEmoji = true
 [menu]
   [[menu.header]]
     name = "About"
-    title = "About Blogophonic"
+    title = "About"
     url = "/about/"
     weight = 1
   [[menu.header]]
@@ -120,18 +120,17 @@ enableEmoji = true
     title = "Talks"
     url = "/talk/"
     weight = 4
-    
-  # Configure footer  
-  [[menu.footer]]
-    name = "License"
-    title = "License"
-    url = "/license/"
-    weight = 1
-  [[menu.footer]]
+  [[menu.header]]
     name = "Contact"
     title = "Contact form"
     url = "/contact/"
-    weight = 2
+    weight = 5
+  ## Configure footer  
+  #[[menu.footer]]
+  #  name = "License"
+  #  title = "License"
+  #  url = "/license/"
+  #  weight = 1
 
 # see https://gohugo.io/about/hugo-and-gdpr/    
 [privacy]

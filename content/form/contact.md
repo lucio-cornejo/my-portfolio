@@ -1,7 +1,7 @@
 ---
 title: Contact
 name: Contact Us Form
-description: "Please feel free to ask me about this blog."
+description: "Please feel free to ask me anything related to my blog posts."
 date: 2019-02-25T13:38:41-06:00
 draft: false
 url: contact

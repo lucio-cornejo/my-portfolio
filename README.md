@@ -382,3 +382,21 @@ show_social_links: true
 show_poweredby_formspree: true
 formspree_form_id: <hashid>
 ```
+
+<!-- 
+```js
+codigo = Array.prototype.slice.call(document.querySelectorAll('pre'));
+let chunk_output = codigo.filter(e => e.children[0].tagName=='CODE');
+chunk_output.forEach(function(e) {if(e.style.backgroundColor.length == 0){ e.style.backgroundColor = "gray";}});
+chunk_output.forEach(function(e) { e.style.filter = "invert(1)";});
+``` 
+Fixes while dealing with hugo apero:
+
+  - xaringanextra panelset HTML solution by removing all indentation from the panelset tags
+
+  - use mathjax with hugo apero
+    Solution: https://github.com/hugo-apero/hugo-apero/issues/38 Comment from july 6.
+
+  - for the custom theme to work, create a folder assets in /my-portfolio/ and include a scss file for the custom theme.
+
+-->
