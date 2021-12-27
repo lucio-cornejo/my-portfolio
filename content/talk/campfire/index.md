@@ -4,8 +4,8 @@ subtitle: "and basic web development"
 excerpt: |
   We explored the basic tools of R Markdown and how to complement them
   via essential knowledge of HTML, CSS and JavaScript.
-date: 2022-01-03
-date_end: 2022-03-07
+date: 2021-01-03
+date_end: 2021-03-07
 show_post_time: false
 event: 
 event_url: 
