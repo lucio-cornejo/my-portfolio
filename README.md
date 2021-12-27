@@ -347,7 +347,6 @@ content/
         └── audio.m4a
 ```
 
-
 Read the full docs here: https://hugo-apero-docs.netlify.app/blog/about-page/
 
 
@@ -384,12 +383,6 @@ formspree_form_id: <hashid>
 ```
 
 <!-- 
-```js
-codigo = Array.prototype.slice.call(document.querySelectorAll('pre'));
-let chunk_output = codigo.filter(e => e.children[0].tagName=='CODE');
-chunk_output.forEach(function(e) {if(e.style.backgroundColor.length == 0){ e.style.backgroundColor = "gray";}});
-chunk_output.forEach(function(e) { e.style.filter = "invert(1)";});
-``` 
 Fixes while dealing with hugo apero:
 
   - xaringanextra panelset HTML solution by removing all indentation from the panelset tags

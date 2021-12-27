@@ -7,7 +7,7 @@ date_end: "2021-01-13"
 show_post_time: false
 event: "rstudio::global(2021)"
 event_url: https://global.rstudio.com
-author: "Alison Hill"
+author: "Alison Colina"
 location: "Sydney, Australia"
 draft: false
 # layout options: single, single-sidebar
@@ -24,7 +24,5 @@ links:
   name: code
   url: https://github.com/apreshill/bakeoff
 ---
-
-{{< here >}}
 
 I'm really excited to give this talk! Stay tuned for video and slides.

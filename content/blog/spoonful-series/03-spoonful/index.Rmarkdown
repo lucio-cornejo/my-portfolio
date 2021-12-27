@@ -3,12 +3,13 @@ title: "A third post"
 weight: 3
 subtitle: ""
 excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites."
-date: 2021-01-03
-draft: false
+date: "`r Sys.Date()`"
+draft: true
+#output:  
+#    md_document:
+#        variant: markdown
+# even adding this output, no render to .markdown occurs .
 ---
-
-{{< here >}}
-
 
 ## are you still here?
 
@@ -16,4 +17,10 @@ draft: false
 
 ---
 
-## final stretch!
+```{r}
+DT::datatable(mtcars)
+```
+
+$\displaystyle{\int\limits_0^{1} x\, dx = \frac{1}{2}}$
+
+

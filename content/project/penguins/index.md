@@ -3,7 +3,7 @@ title: "Palmer Penguins"
 subtitle: ""
 excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites."
 date: 2019-07-02
-author: "Eric Anderson"
+author: "Lucio Cornejo"
 draft: false
 tags:
 - hugo-site
@@ -27,8 +27,6 @@ links:
   name: Blog post
   url: https://education.rstudio.com/blog/2020/07/palmerpenguins-cran/
 ---
-
-{{< here >}}
 
 ### “Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as we've been making websites.”
 

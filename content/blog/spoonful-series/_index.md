@@ -2,7 +2,7 @@
 title: A Spoonful of Hugo
 description: |
   A forking fun new feature for series.
-author: Alison Hill
+author: Lucio Cornejo
 show_post_thumbnail: false
 show_author_byline: true
 show_post_date: true
@@ -12,13 +12,9 @@ layout: list-sidebar # list, list-sidebar, list-grid
 # for list-sidebar layout
 sidebar: 
   title: A Spoonful of Hugo
-  author: Alison Hill
+  author: Lucio Cornejo
   description: |
-    A forking fun new feature for series.
-    Even this sidebar offers a ton of customizations!
-    
-    Check out the _index.md file in the /blog/spoonful-series
-    folder to edit this content.
+    Lucio was here!
   text_link_label: ""
   text_link_url: ""
   show_sidebar_adunit: false # show ad container
@@ -27,7 +23,7 @@ sidebar:
 cascade:
   layout: single-series       # for a series, do not change
   series: A Spoonful of Hugo  # name your series
-  author: Alison Hill
+  author: Lucio Cornejo
   show_author_byline: true
   show_post_date: true
   sidebar:
