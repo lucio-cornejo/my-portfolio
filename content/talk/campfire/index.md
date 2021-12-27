@@ -11,7 +11,7 @@ event:
 event_url: 
 author: "Lucio Cornejo"
 location: "Lima, Peru"
-draft: false
+draft: true
 # layout options: single, single-sidebar
 layout: single
 categories:
