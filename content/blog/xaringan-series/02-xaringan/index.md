@@ -35,12 +35,12 @@ The following `JavaScript` code has fixed those problems in my presentations:
 // scrolling and when clicking some anchors 
 let touchmoved;
 $('div.remark-slide-container').on('touchend', function(event){
-    if(touchmoved == true) {
+    if(touchmoved === true) {
         // Do not change slide if scrolling took place
         event.preventDefault(); 
         event.stopPropagation();
     } else {
-        if(event.target.tagName == "IMG") {
+        if(event.target.tagName === "IMG") {
             if (event.target.parentNode.getAttribute("href").includes("https:")) {
                 // If there was no scrolling and the user clicked on an image
                 // which has an anchor, then do not change slide and open
@@ -95,7 +95,7 @@ $('div.remark-slide-container').on('touchmove', function() { swiped = true; });
 
 $('div.remark-slide-container').on('touchend', event => {
     touchendX = event.changedTouches[0].screenX;
-    if (swiped == true) conditional_swipe();
+    if (swiped === true) conditional_swipe();
 });
 ```
 
