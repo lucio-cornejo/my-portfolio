@@ -1,7 +1,7 @@
 ---
 title: "Basic customization"
 weight: 1
-subtitle: "My preferred CSS properties for Xaringan presentations"
+subtitle: "My preferred modifications to Xaringan presentations"
 excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as w've been making websites."
 date: 2021-12-27
 draft: false
@@ -40,9 +40,9 @@ output:
 
 ### Second side effect
 
-Another side effect of adding scrolling capabilities to Xaringan slides is that the region displaying the slide number
+Another issue of adding scrolling capabilities to Xaringan slides is that the region displaying the slide number
 does not automatically go to the bottom of the slide whenever scrolling was necessary. \
-I've chosen to deal with that issue via changing the position of the slide counter to the upper right corner of
+I've chosen to deal with that drawback via changing the position of the slide counter to the upper right corner of
 every slide, like so:
 
 ```css
@@ -61,15 +61,15 @@ div.remark-slide-number {
 <!--#endregion-->
 
 <!--#region math overflow -->
-## MathJax's overflowing of display style for Math 
+## MathJax's overflowing of Math display style equations
 
-Sometimes the overflow can occur horizontally, for example, for long Math equations.
+Sometimes the overflow can occur horizontally, for example, for long math equations.
 I consider best practice to not allow scrolling for math equations unless necessary 
 (for example in blog posts where the space for content is quite small). Therefore,
-I do not recommend adding scrolling capabilities to Math equations in Xaringan ...
-simply vertically extend the previously overflowing Math equation.
+I do not recommend adding scrolling capabilities to math equations in Xaringan ...
+simply vertically extend the previously overflowing equation.
 
-Despite this, here is an example of a working scrollable Math equation
+Despite this, here is an example of a working scrollable math equation
 and how I like to include them in Xaringan:
 
 <style>
@@ -122,13 +122,13 @@ and how I like to include them in Xaringan:
 <!--#endregion-->
 
 <!--#region custom panelsets -->
-## Custom Xaringan's panelsets {.tabset}
+## Custom Xaringan's panelsets
 
 Xaringan's panelsets are great, but I don't like their default styling, particularly because
-it can be non trivial to distinguish between tabs. In particular, I've met people who upo seeing
-the default Xaringan panelset in a slide of mine didn't even recognize that they could click on
-them to reveal new sections. \
-In order to try to fix that, I prefer styling Xaringan's panelsets this way:
+it can be non trivial to distinguish between tabs. In particular, I've met people who after seeing
+the default Xaringan panelset in a slide of mine, they didn't even recognize that they could click on
+the tabs to reveal new sections. \
+In order to fix that, I prefer styling Xaringan's panelsets this way:
 
 ```{r, echo=FALSE}
 xaringanExtra::use_panelset()
@@ -172,8 +172,8 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
 </div>
 
-For some reason, the usual way to create Xaringan's panelsets
-(`## some header {.panelset}`)
+For some reason, the usual way to create Xaringan's panelsets \
+(`## some header {.panelset}`) \
 does not work for me in this page, and neither did the workarounds
 mentioned [here](https://joys.solarchemist.se/blog/seedling/) and
 [here](https://gist.github.com/gadenbuie/fa7b75e5447ea52d5d1f13d2f15ca7fa).
