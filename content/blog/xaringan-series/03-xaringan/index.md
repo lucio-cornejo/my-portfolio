@@ -27,7 +27,7 @@ Either way, assuming you already have **R** installed, this is how I've setup my
 - **Step zero** \
   Install [VS Code](https://code.visualstudio.com/download).
 
-- **Step one** \ 
+- **Step one**  
   Install the following VS Code extensions:
     - [R](https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r)
     - [R Markdown](https://marketplace.visualstudio.com/items?itemName=TianyiShi.rmarkdown) 
