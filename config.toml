@@ -31,7 +31,7 @@ enableEmoji = true
   orgName = "Yoshi"
   orgLocal = ""
   description = "A modern, beautiful, and easily configurable blog theme for Hugo."
-  favicon = "/img/yoshi-icon-2.ico" # icon for broswer tab of website # More examples at https://iconarchive.com/search?q=
+  favicon = "/img/yoshi-icon-2.ico" # icon for browser tab of website # More examples at https://iconarchive.com/search?q=
   logo = "/img/icons8-home-50.png"  # symbol for home page 
   mainSections = ["blog", "project", "talk"]
   navallcaps = false
