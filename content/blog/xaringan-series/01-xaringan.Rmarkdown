@@ -2,7 +2,7 @@
 title: "Basic customization"
 weight: 1
 subtitle: "My preferred modifications to Xaringan presentations"
-excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we've all been hacking our way around for as long as w've been making websites."
+excerpt: "Xaringan is a R package which allows us to create HTML slide presentations using R Markdown and Remark.js ."
 date: 2021-12-27
 draft: false
 ---
