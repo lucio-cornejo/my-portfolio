@@ -2,7 +2,7 @@
 title: "Issues when reading Xaringan presentations on mobile"
 weight: 2
 subtitle: "JavaScript to the rescue!"
-excerpt: "Grid is the very first CSS module created specifically to solve the layout problems we’ve all been hacking our way around for as long as we’ve been making websites."
+excerpt: "Xaringan is a R package which allows us to create HTML slide presentations using R Markdown and Remark.js ."
 date: 2021-12-27
 draft: false
 ---
