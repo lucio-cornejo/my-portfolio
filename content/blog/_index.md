@@ -1,7 +1,7 @@
 ---
 title: A personal blog
 description: |
-  In this section, I write about intersting findings related to topics
+  In this section, I write about interesting findings related to topics
   I am researching or projects I am working on.
 author: "Lucio Cornejo"
 show_post_thumbnail: true
