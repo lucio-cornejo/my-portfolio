@@ -31,8 +31,7 @@ In a mobile Xaringan presentation:
 The following `JavaScript` code has fixed those problems in my presentations:
 
 ```js
-// Code to fix the change of slide when 
-// scrolling and when clicking some anchors 
+// Code to fix the change of slide when scrolling and when clicking some elements
 let touchmoved;
 $('div.remark-slide-container').on('touchend', function(event){
     if(touchmoved === true) {
@@ -40,19 +39,34 @@ $('div.remark-slide-container').on('touchend', function(event){
         event.preventDefault(); 
         event.stopPropagation();
     } else {
+        // Fix for issue when clicking an image with an anchor
         if(event.target.tagName === "IMG") {
             if (event.target.parentNode.getAttribute("href").includes("https:")) {
                 // If there was no scrolling and the user clicked on an image
                 // which has an anchor, then do not change slide and open
-                // in a ne window the site linked to image touched
+                // in a next window the site linked to image touched
                 event.preventDefault(); 
                 event.stopPropagation();
                 window.open(event.target.parentNode.getAttribute("href"));
             } 
         }
+        
+        // Fix for issue when clicking the symbol of a <details><summary> ...
+        if (event.target.tagName === "SUMMARY") {
+            if(event.target.parentNode.tagName === "DETAILS") {
+                event.preventDefault();
+                event.stopPropagation();
+                // Manually toggle between open or closed <details>
+                if(event.target.parentNode.open === true) {
+                    event.target.parentNode.open = false;
+                } else {
+                    event.target.parentNode.open = true;
+                }
+            }
+        }
     }
 }).on('touchmove', function(){
-    touchmoved = true; // Scrolling took place
+    touchmoved = true;
 }).on('touchstart', function(){
     touchmoved = false;
 });

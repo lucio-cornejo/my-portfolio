@@ -41,7 +41,7 @@ Either way, assuming you already have **R** installed, this is how I've setup my
 ```json
 "multiCommand.commands": [
     {
-        "command": "multiCommand.globalKnit",
+        "command": "multiCommand.knit",
         "sequence": [
             // Only works if Rmd file requires rmarkdown::render(...) to get knitted,
             // so so not for Shiny apps or Blogdown sites, but creating its VS Code 
@@ -67,7 +67,7 @@ Either way, assuming you already have **R** installed, this is how I've setup my
         ]
     },
     {
-        "command": "multiCommand.knit",
+        "command": "multiCommand.fasterKnit",
         "sequence": [
             "workbench.action.files.save",
             "editor.action.insertLineAfter",
@@ -87,15 +87,15 @@ Either way, assuming you already have **R** installed, this is how I've setup my
     Appropriately add to your `keybindings.json` file in VS Code (to open it, press ctrl+k followed by ctrl+s, then open its JSON file via a button in the top right corner) the following:
     ```json
     {
-        "key": "ctrl+shift+g k", 
+        "key": "ctrl+shift+k", 
         "command": "extension.multiCommand.execute",
-        "args": { "command": "multiCommand.globalKnit" },
+        "args": { "command": "multiCommand.knit" },
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+k",
+        "key": "ctrl+shift+f k",
         "command": "extension.multiCommand.execute",
-        "args": { "command": "multiCommand.knit" },
+        "args": { "command": "multiCommand.fasterKnit" },
         "when": "editorTextFocus"
     }
     ```
@@ -109,3 +109,12 @@ Either way, assuming you already have **R** installed, this is how I've setup my
   in which case simply run `xaringan::inf_mr()` in your VS Code terminal with **R** in order to activate the live updates of your Xaringan slides and knitting upon saving the Rmd file. \
   The RStudio snippets I mentioned can be overcome with VS Code snippets,
   I believe that due to the fact that a window with your snippets pops up when you are writing one, so you can select the desired snippet with the keyboard whenever the _bug_ which made them fail in RStudio occurs. Such window does not show up in RStudio when working with R Markdown files, although it does for other type of files, so I guess the small _bug_ could be fixed via adding to RStudio's R Markdown files such pop up window with snippets suggestions.
+
+- **Step six**<br>
+  An alternative to `xaringan::inf_mr()` is using the VS Code extesion 
+  **Live Server** for the xaringan's html output file, and with the help 
+  of some VS Code snippets, write directly into the HTML file and appropriately 'copy,paste,knit' such modifications into the Rmd file
+  of the Xaringan presentation being edited live.<br>
+  It seems like a tedious process, but I find it just fine and worth
+  the result (faster and more reliable live updating of the 
+  xaringan presentation).
