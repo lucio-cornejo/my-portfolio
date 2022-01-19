@@ -40,8 +40,8 @@ Either way, assuming you already have **R** installed, this is how I've setup my
   Appropriately add the following to your `settings.json` file in VS Code (press ctrl+, to open it and then press the button in the upper right corner which opens its JSON file):
 ```json
 "multiCommand.commands": [
-    {
-        "command": "multiCommand.knit",
+  {
+    "command": "multiCommand.globalKnit",
         "sequence": [
             // Only works if Rmd file requires rmarkdown::render(...) to get knitted,
             // so so not for Shiny apps or Blogdown sites, but creating its VS Code 
@@ -51,23 +51,23 @@ Either way, assuming you already have **R** installed, this is how I've setup my
             "editor.action.insertLineAfter",
 
             // Only insert this next line if your PC uses \ for file directories, like Windows does
-            { "command": "type", "args": { "text": "tempo <- gsub('\"','', gsub('\\\\\\\\','\/',readClipboard())); " } },
+            { "command": "type", "args": { "text": "tempo <- gsub('\"','', gsub('\\\\\\\\','\/',readClipboard()))\n" } },
             // If that's not the case for you, uncomment the following line:
-            // { "command": "type", "args": { "text": "tempo <- readClipboard(); " } },
+            // { "command": "type", "args": { "text": "tempo <- readClipboard()\n" } },
 
-            { "command": "type", "args": { "text": "file_name <- tail(strsplit(tempo,'/')[[1]],n=1); "} },
-            { "command": "type", "args": { "text": "file_path <-substr(tempo,1,nchar(tempo)-nchar(file_name)); " } },
-            { "command": "type", "args": { "text": "setwd(file_path); " } },
+            { "command": "type", "args": { "text": "file_name <- tail(strsplit(tempo,'/')[[1]],n=1)\n"} },
+            { "command": "type", "args": { "text": "file_path <-substr(tempo,1,nchar(tempo)-nchar(file_name))\n" } },
+            { "command": "type", "args": { "text": "setwd(file_path)\n" } },
             { "command": "type", "args": { "text": "rmarkdown::render(file_name)" } },
-
-            "expandLineSelection",          // select current line in text editor
-            "r.runSelection",               // execute in R the line selected
-            "editor.action.deleteLines",    // delete the line we added in order to knit the document
+            "cursorUp","cursorUp","cursorUp","cursorUp",
+            "expandLineSelection","expandLineSelection","expandLineSelection","expandLineSelection","expandLineSelection",
+            "r.runSelection",               // Execute via R the lines just selected
+            "editor.action.deleteLines",    // Delete the lines just added in order to knit the document
             "workbench.action.files.save"   // save the Rmd file that was just knitted
         ]
     },
     {
-        "command": "multiCommand.fasterKnit",
+        "command": "multiCommand.knit",
         "sequence": [
             "workbench.action.files.save",
             "editor.action.insertLineAfter",
@@ -89,13 +89,13 @@ Either way, assuming you already have **R** installed, this is how I've setup my
     {
         "key": "ctrl+shift+k", 
         "command": "extension.multiCommand.execute",
-        "args": { "command": "multiCommand.knit" },
+        "args": { "command": "multiCommand.globalKnit" },
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+f k",
+        "key": "ctrl+alt+k", // Faster R Markdown knit
         "command": "extension.multiCommand.execute",
-        "args": { "command": "multiCommand.fasterKnit" },
+        "args": { "command": "multiCommand.knit" },
         "when": "editorTextFocus"
     }
     ```
