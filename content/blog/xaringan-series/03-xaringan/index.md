@@ -51,16 +51,16 @@ Either way, assuming you already have **R** installed, this is how I've setup my
             "editor.action.insertLineAfter",
 
             // Only insert this next line if your PC uses \ for file directories, like Windows does
-            { "command": "type", "args": { "text": "tempo <- gsub('\"','', gsub('\\\\\\\\','\/',readClipboard()))\n" } },
+            { "command": "type", "args": { "text": "tempo <- gsub('\"','', gsub('\\\\\\\\','\/',readClipboard()));" } },
             // If that's not the case for you, uncomment the following line:
-            // { "command": "type", "args": { "text": "tempo <- readClipboard()\n" } },
+            // { "command": "type", "args": { "text": "tempo <- readClipboard();" } },
 
-            { "command": "type", "args": { "text": "file_name <- tail(strsplit(tempo,'/')[[1]],n=1)\n"} },
-            { "command": "type", "args": { "text": "file_path <-substr(tempo,1,nchar(tempo)-nchar(file_name))\n" } },
-            { "command": "type", "args": { "text": "setwd(file_path)\n" } },
-            { "command": "type", "args": { "text": "rmarkdown::render(file_name)" } },
-            "cursorUp","cursorUp","cursorUp","cursorUp",
-            "expandLineSelection","expandLineSelection","expandLineSelection","expandLineSelection","expandLineSelection",
+            { "command": "type", "args": { "text": "file_name <- tail(strsplit(tempo,'/')[[1]],n=1);"} },
+            { "command": "type", "args": { "text": "file_path <-substr(tempo,1,nchar(tempo)-nchar(file_name));" } },
+            { "command": "type", "args": { "text": "setwd(file_path);" } },
+            { "command": "type", "args": { "text": "rmarkdown::render(file_name) #>>>" } }, 
+            // The previouse comment (#>>>) is added in order to fix a bracketed paste issue when pasting code to terminal
+            "expandLineSelection",
             "r.runSelection",               // Execute via R the lines just selected
             "editor.action.deleteLines",    // Delete the lines just added in order to knit the document
             "workbench.action.files.save"   // save the Rmd file that was just knitted
