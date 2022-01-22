@@ -7,6 +7,7 @@ show_post_thumbnail: true
 show_author_byline: true
 show_post_date: true
 show_post_time: true
+location: "Online"
 # for listing page layout
 layout: list-grid # list, list-sidebar, list-grid
 
