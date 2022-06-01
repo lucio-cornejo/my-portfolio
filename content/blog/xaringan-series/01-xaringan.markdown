@@ -34,10 +34,10 @@ I deal with that issue using this in the YAML of my Xaringan presentations with 
 
 ```yaml
 output: 
-    xaringan::moon_reader:
-      nature:
-        navigation:
-          scroll: false
+  xaringan::moon_reader:
+    nature:
+      navigation:
+        scroll: false
 ```
 
 ### Second side effect
@@ -51,13 +51,13 @@ every slide, like so:
 /* Potential fix of slide counter number position when slide overflows */
 div[class*="remark-slide-content"] { position: relative; }
 div.remark-slide-number {
-    top: 0;
-    right: 0;
-    position: absolute;
-    /* Margins to adjust the slide number to almost the exact location where it naturally is */
-    /* if we choose to put the slide number on the slide's bottom right corner instead. */
-    margin-right: 20px;
-    margin-bottom: 12px;
+  top: 0;
+  right: 0;
+  position: absolute;
+  /* Margins to adjust the slide number to almost the exact location where it naturally is */
+  /* if we choose to put the slide number on the slide's bottom right corner instead. */
+  margin-right: 20px;
+  margin-bottom: 12px;
 }
 ```
 <!--#endregion-->
@@ -75,50 +75,50 @@ Despite this, here is an example of a working scrollable math equation
 and how I like to include them in Xaringan:
 
 <style>
-    .math-display-style {
+  .math-display-style {
     background-color: rgba(150,150,150,0.075);
     padding: 10px 0px 0px 10px; 
     overflow-x: auto;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;  /*  Hide scrollbar for Firefox */
-    }
+  }
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .math-display-style::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .math-display-style::-webkit-scrollbar {
     display: none;
-    }
+  }
 </style>
 
 <div class="math-display-style">
-  $$
-    \text{ The following integral turns out to be related to the main probability distribution in Statistics: }
-    \int\limits_{-\infty}^{\infty} e^{-x^2}\, dx = \sqrt\pi \kern1em
-  $$
+$$
+  \text{ The following integral turns out to be related to the main probability distribution in Statistics: }
+  \int\limits_{-\infty}^{\infty} e^{-x^2}\, dx = \sqrt\pi \kern1em
+$$
 </div>
 
 **Its code:**
 
 ```html
 <style>
-    .math-display-style {
+  .math-display-style {
     background-color: rgba(150,150,150,0.075);
     padding: 10px 0px 0px 10px; 
     overflow-x: auto;
     -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
     scrollbar-width: none;  /*  Hide scrollbar for Firefox */
-    }
+  }
 
-    /* Hide scrollbar for Chrome, Safari and Opera */
-    .math-display-style::-webkit-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .math-display-style::-webkit-scrollbar {
     display: none;
-    }
+  }
 </style>
   
 <div class="math-display-style">
-  $$
-    \text{ The following integral turns out to be related to the main probability distribution in Statistics: }
-    \int\limits_{-\infty}^{\infty} e^{-x^2}\, dx = \sqrt\pi \kern1em
-  $$
+$$
+  \text{ The following integral turns out to be related to the main probability distribution in Statistics: }
+  \int\limits_{-\infty}^{\infty} e^{-x^2}\, dx = \sqrt\pi \kern1em
+$$
 </div>
 ```
 <!--#endregion-->
@@ -132,14 +132,12 @@ the default Xaringan panelset in a slide of mine, they didn't even recognize tha
 the tabs to reveal new sections. \
 In order to fix that, I prefer styling Xaringan's panelsets this way:
 
-
-
 <style>
-li.panel-tab {
+  li.panel-tab {
     border: 1.5px solid black !important;
     background-color: rgb(120, 140, 245) !important;
     background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
-}
+  }
 </style>
 
 <div class="panelset">
@@ -156,13 +154,12 @@ background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
 }
 ```
 
-
 <style type="text/css">
 /* Custom Xaringan panelset */
 li.panel-tab {
-border: 1.5px solid black !important;
-background-color: rgb(120, 140, 245) !important;
-background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
+  border: 1.5px solid black !important;
+  background-color: rgb(120, 140, 245) !important;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
 }
 </style>
 </div>

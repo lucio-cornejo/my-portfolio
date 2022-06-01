@@ -37,4 +37,20 @@
       }
     });
   </script>
+
+  <!-- Add anchor for CV in navigation bar -->
+  <script>
+    // Get navigation bar
+    let navBar = document.querySelector("body > div > header > nav").children[1];
+    // Clone a navigation link in order to generate an appropriate new one
+    let navLink = navBar.children[0].cloneNode(true);
+    // Link to my curriculum vitae
+    navLink.classList.remove("active");
+    navLink.title = "CV";
+    navLink.innerText = "CV";
+    navLink.href = "/custom-files/CV-lucio-cornejo.pdf";
+    // Insert new anchor in navigation bar
+    navBar.prepend(navLink);
+  </script>
 </footer>
+

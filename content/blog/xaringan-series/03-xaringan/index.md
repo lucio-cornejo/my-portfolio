@@ -11,7 +11,7 @@ Here is another workaround I've had to implement when working with Xaringan, now
 
 ## Xaringan's inf_mr() function
 
-When working on a Xaringan presentation in RStudio, the _xaringan::inf_mr()_ function activates a live preview of the Xaringan final presentation, which now displays changes when they are typed in the Rmd file, **no longer needing to be constantly knitting** in order to see the final Xaringan presentation.
+When working on a Xaringan presentation in RStudio, the _xaringan::inf_mr()_ function activates a live preview of the Xaringan final presentation, which now displays changes when they are typed in the Rmd file, **no longer needing to be constantly rendering** in order to see the final Xaringan presentation.
 
 It's an amazing function, yes, but, once again, it hasn't worked well enough for me, due to the following:
 
@@ -22,7 +22,7 @@ but it has not worked for me.
 
 - It may just be bad luck, but many times I've experienced that such function does not start updating the Xaringan preview as intended, and it takes a couple calls to the function for it to actually start working.
 
-Either way, assuming you already have **R** installed, this is how I've setup my VS Code session in order to have a **replacement** (better for me at least) of Xaringan's lovely inf_mr() function.
+Either way, assuming you already have **R** installed, this is how I've setup my VS Code session in order to have a **replacement** (better for me at least) of Xaringan's lovely `inf_mr()` function.
 
 - **Step zero** \
   Install [VS Code](https://code.visualstudio.com/download).
@@ -51,20 +51,12 @@ Either way, assuming you already have **R** installed, this is how I've setup my
             "editor.action.insertLineAfter",
 
             // Only insert this next line if your PC uses \ for file directories, like Windows does
-            { "command": "type", "args": { "text": "tempo = gsub('\"','', gsub('\\\\\\\\','\/',readClipboard()))\n" } },
+            { "command": "type", "args": { "text": "rmd_file_path = gsub('\"','', gsub('\\\\\\\\','\/',readClipboard()))\n" } },
             // If that's not the case for you, uncomment the following line:
             // { "command": "type", "args": { "text": "tempo = readClipboard()\n" } },
-
-            { "command": "type", "args": { "text": "file_name = tail(strsplit(tempo,'/')[[1]],n=1)\n"} },
-            { "command": "type", "args": { "text": "file_path = substr(tempo,1,nchar(tempo)-nchar(file_name))\n" } },
-            { "command": "type", "args": { "text": "setwd(file_path)\n" } },
-            { "command": "type", "args": { "text": "rmarkdown::render(file_name)" } }, 
+            { "command": "type", "args": { "text": "rmarkdown::render(rmd_file_path)" } }, 
             
-            "cursorUp","cursorUp","cursorUp","cursorUp",
-            "expandLineSelection","expandLineSelection",
-            "expandLineSelection","expandLineSelection",
-            "expandLineSelection",
-
+            "cursorUp", "expandLineSelection", "expandLineSelection",
             "r.runSelection",               // Execute via R the lines just selected
             "editor.action.deleteLines",    // Delete the lines just added in order to knit the document
             "workbench.action.files.save"   // save the Rmd file that was just knitted
@@ -75,7 +67,7 @@ Either way, assuming you already have **R** installed, this is how I've setup my
         "sequence": [
             "workbench.action.files.save",
             "editor.action.insertLineAfter",
-            { "command": "type", "args": { "text": "rmarkdown::render(file_name)" } },
+            { "command": "type", "args": { "text": "rmarkdown::render(rmd_file_path)" } },
             "expandLineSelection", 
             "r.runSelection",
             "editor.action.deleteLines",
@@ -84,7 +76,7 @@ Either way, assuming you already have **R** installed, this is how I've setup my
     }
 ]
 ```
-  Basically, the **globalKnit** command uses the path of the Rmd document to be knitted in order to execute in **R** the command to actually knit it, so it takes about a second longer than the **knit** command, which is used only after having used once the **globalKnit** command, in order to get the correct directory where the Rmd document to be knitted is located and the name of such file. \
+  Basically, the **globalKnit** command uses the path of the Rmd document to be knitted in order to execute in **R** the command to actually render the file, so it takes about a second longer than the **knit** command, which is used only after having used once the **globalKnit** command, in order to get the correct path of the Rmd document to be rendered. \
   You can read [this](https://stackoverflow.com/questions/17605563/efficiently-convert-backslash-to-forward-slash-in-r) if you wish to understand the use of the **gsub()** function. 
 
   - **Step four** \
@@ -111,14 +103,17 @@ Either way, assuming you already have **R** installed, this is how I've setup my
   in VS Code is installing [Pandoc](https://pandoc.org/installing.html). \
   However, that installation is required whenever R Markdown uses Pandoc, obviously, which Xaringan does not. So perhaps it's unnecessary to install Pandoc if you only wish to knit Xaringan documents,
   in which case simply run `xaringan::inf_mr()` in your VS Code terminal with **R** in order to activate the live updates of your Xaringan slides and knitting upon saving the Rmd file. \
-  The RStudio snippets I mentioned can be overcome with VS Code snippets,
-  I believe that due to the fact that a window with your snippets pops up when you are writing one, so you can select the desired snippet with the keyboard whenever the _bug_ which made them fail in RStudio occurs. Such window does not show up in RStudio when working with R Markdown files, although it does for other type of files, so I guess the small _bug_ could be fixed via adding to RStudio's R Markdown files such pop up window with snippets suggestions.
+  The RStudio snippets' issue I mentioned can be overcome with VS Code snippets,
+  I believe that due to the fact that a window with your snippets pops up when you are writing one, so you can select the desired snippet with the keyboard whenever the _bug_ which made them fail in RStudio occurs. Such window does not show up in RStudio when working with R Markdown files, although it does for other type of files, so I guess the small _bug_ could be fixed via adding to RStudio's R Markdown files such pop up window with snippets suggestions. If such window is not displayed for you in VS Code, try again after installing
+  the **Tabnine AI Autocomplete** VS Code extension.
 
-- **Step six**<br>
+- **Step six** \
   An alternative to `xaringan::inf_mr()` is using the VS Code extesion 
   **Live Server** for the xaringan's html output file, and with the help 
-  of some VS Code snippets, write directly into the HTML file and appropriately 'copy,paste,knit' such modifications into the Rmd file
-  of the Xaringan presentation being edited live.<br>
+  of some VS Code snippets, write directly into the HTML file and appropriately 
+  'copy, paste, knit' such modifications into the Rmd file
+  of the Xaringan presentation being edited live. \
   It seems like a tedious process, but I find it just fine and worth
   the result (faster and more reliable live updating of the 
-  xaringan presentation).
+  xaringan presentation). I may write in the future how to set it up.
+  

@@ -1,6 +1,6 @@
 ---
 title: My projects
-description: "Some topics I've been grinding"
+description: ""
 author: "Lucio Cornejo"
 show_post_thumbnail: true
 show_author_byline: true

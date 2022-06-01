@@ -5,7 +5,7 @@ excerpt: |
   We explored the basic tools of R Markdown and how to complement them
   via essential knowledge of HTML, CSS and JavaScript.
 date: 2022-01-03
-date_end: 2022-02-28
+date_end: 2022-03-20
 show_post_time: false
 event: 
 event_url: 
@@ -21,9 +21,8 @@ links:
   icon_pack: fas
   name: website
   url: https://taller-r-markdown-lucio-cornejo.netlify.app/index.html
-
 - icon: github
   icon_pack: fab
   name: code
-  url: https://github.com/lucio-cornejo/r-markdown-summer-workshop
+  url: https://github.com/lucio-cornejo/taller-r-markdown
 ---

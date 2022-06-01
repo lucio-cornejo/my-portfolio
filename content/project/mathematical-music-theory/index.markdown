@@ -28,8 +28,19 @@ links:
 
 <p style="margin-bottom: -100px;"> &nbsp; </p>
 
-Here are some writings related to studies I've been doing about ***unidirectional minimal voice leading between transposed chords***.
+In this [post](https://lucio-cornejo.github.io/post/a-glimpse-into-the-world-of-voice-leading/)
+you'll find a basic explanation of the mathematical problem I plan to solve
+as my undergraduate's thesis project, besides its connection to music.
+
+After giving that post a read, I invite you to play around with the musical functions
+defined in such article, via these web apps I've created:
 
 + <https://lucio-cornejo.shinyapps.io/Unidirectional_minimal_voice_leading_graph>
 
 + <https://lucio-cornejo.shinyapps.io/MVL_and_CMD>
+
+A quick summary of my mathemusical research is to find conditions, either 
+necessary or sufficient, for when, given a **chord** and some **transposition** of it,
+does there exist a **minimal voice leading** between such chords such that
+all the **trajectories** which define such voice leading have the **same direction**,
+that is, all downward or all upward trajectories.

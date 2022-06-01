@@ -8,9 +8,9 @@ draft: false
 ---
 
 Perhaps it's just bad luck, but I've encountered a couple of issues on mobile when reading Xaringan slides. \
-Here I'll describe how I dealt with those issues, mainly using JavaScript.
+Here I'll describe how I have dealt with those issues, mainly using JavaScript.
 
-## Quickly switch slides
+## Quickly alternating between slides
 
 During a mobile Xaringan presentation, if you tap the screen, the next or previous slide will show up. \
 However, if you tap many times, and fast, the screen usually activates a zoom. \
@@ -23,7 +23,7 @@ html { touch-action: manipulation; }
 
 ## Unintended slide change due to tap
 
-In a mobile Xaringan presentation:
+The following has occurred during a mobile Xaringan presentation:
 - When I've scrolled through a vertically long slide, the tap to activate the scrolling activates an unintended slide change.
 - When tapping an image with a link, the slide changes and
     the link is not opened.
@@ -34,41 +34,41 @@ The following `JavaScript` code has fixed those problems in my presentations:
 // Code to fix the change of slide when scrolling and when clicking some elements
 let touchmoved;
 $('div.remark-slide-container').on('touchend', function(event){
-    if(touchmoved === true) {
-        // Do not change slide if scrolling took place
-        event.preventDefault(); 
-        event.stopPropagation();
-    } else {
-        // Fix for issue when clicking an image with an anchor
-        if(event.target.tagName === "IMG") {
-            if (event.target.parentNode.getAttribute("href").includes("https:")) {
-                // If there was no scrolling and the user clicked on an image
-                // which has an anchor, then do not change slide and open
-                // in a next window the site linked to image touched
-                event.preventDefault(); 
-                event.stopPropagation();
-                window.open(event.target.parentNode.getAttribute("href"));
-            } 
-        }
-        
-        // Fix for issue when clicking the symbol of a <details><summary> ...
-        if (event.target.tagName === "SUMMARY") {
-            if(event.target.parentNode.tagName === "DETAILS") {
-                event.preventDefault();
-                event.stopPropagation();
-                // Manually toggle between open or closed <details>
-                if(event.target.parentNode.open === true) {
-                    event.target.parentNode.open = false;
-                } else {
-                    event.target.parentNode.open = true;
-                }
+  if(touchmoved === true) {
+    // Do not change slide if scrolling took place
+    event.preventDefault(); 
+    event.stopPropagation();
+  } else {
+    // Fix for issue when clicking an image with an anchor
+    if(event.target.tagName === "IMG") {
+        if (event.target.parentNode.getAttribute("href").includes("https:")) {
+            // If there was no scrolling and the user clicked on an image
+            // which has an anchor, then do not change slide and open
+            // in a next window the site linked to image touched
+            event.preventDefault(); 
+            event.stopPropagation();
+            window.open(event.target.parentNode.getAttribute("href"));
+        } 
+    }
+    
+    // Fix for issue when clicking the symbol of a <details><summary> ...
+    if (event.target.tagName === "SUMMARY") {
+        if(event.target.parentNode.tagName === "DETAILS") {
+            event.preventDefault();
+            event.stopPropagation();
+            // Manually toggle between open or closed <details>
+            if(event.target.parentNode.open === true) {
+                event.target.parentNode.open = false;
+            } else {
+                event.target.parentNode.open = true;
             }
         }
     }
+  }
 }).on('touchmove', function(){
-    touchmoved = true;
+  touchmoved = true;
 }).on('touchstart', function(){
-    touchmoved = false;
+  touchmoved = false;
 });
 ```
 
@@ -76,8 +76,9 @@ $('div.remark-slide-container').on('touchend', function(event){
 
 Such functionality is available via `Remark.js`, therefore, it would be expected to work with Xaringan. However, despite it being included in Xaringan presentations I've found online, it hasn't worked for mine.
 
-I've implemented such functionality a little bit different, because my code allows for a _swipe slide change_ to be cancelled
-if the user on mobile lifts up his or her finger which induced the tap event, near enough to where the tap initially took place.
+I've implemented such functionality a little bit different, because my code allows for any
+_swipe slide change_ to be cancelled if the user on mobile lifts up his or her finger which triggered 
+the tap event, near enough to where the tap initially took place.
 
 The Xaringan presentations I've read on mobile do **not** have 
 such _swipe slide change **cancel**_ functionality.
@@ -116,7 +117,8 @@ $('div.remark-slide-container').on('touchend', event => {
 ## Did you know?
 
 Lastly, just a brief mention that many functions related to
-the slides in Xaringan (for example, go to previous slide, go to next slide, get the slide's current number, etc) are already defined in **Remark.js**, so you can use them with **JavaScript**. \
+the slides in Xaringan (for example, go to previous slide, go to next slide, get the slide's current number, etc)
+are already defined in **Remark.js**, so you can use them with **JavaScript**. \
 In order to see those functions, open a Xaringan presentation on
 Desktop, go to the _Console_ (ctrl+shift+i in _Chrome_) and type 
 `slideshow.` , then the available functions should pop up.
