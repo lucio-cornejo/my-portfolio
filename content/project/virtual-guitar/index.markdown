@@ -35,7 +35,7 @@ This project consists of three websites, each sharing the same goal:
   <dd>
     Mobile version of a M3 guitar.
   </dd>
-  <dt><a href="">Project 3</a></dt>
+  <dt><a href="https://github.com/lucio-cornejo/guide-for-M3-guitar">Project 3</a></dt>
   <dd>
     Guide about the M3 guitar tuning, what it is, why bother trying it,
     and examples of chords which it makes humanly possible to play on guitar.
