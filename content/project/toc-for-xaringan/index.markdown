@@ -8,6 +8,7 @@ draft: false
 tags:
 - hugo-site
 categories:
+- rmarkdown
 - xaringan
 # layout options: single or single-sidebar
 layout: single

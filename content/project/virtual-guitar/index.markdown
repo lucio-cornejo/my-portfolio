@@ -8,6 +8,7 @@ draft: false
 tags:
 - hugo-site
 categories:
+- frontend
 - music
 layout: single
 links:
