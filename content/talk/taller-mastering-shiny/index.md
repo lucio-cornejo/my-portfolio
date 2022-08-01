@@ -1,6 +1,6 @@
 ---
 title: "Mastering Shiny"
-subtitle: "a Book Club by RLadies Lima"
+subtitle: "RLadies-Lima Book Club"
 excerpt: |
   We learnt the basic principles of the Shiny library,
   a framework for building interactive web applications using R.
