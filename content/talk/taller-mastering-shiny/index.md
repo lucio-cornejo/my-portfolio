@@ -25,3 +25,9 @@ links:
   name: code
   url: https://github.com/lucio-cornejo/Mastering-Shiny_Book-Club
 ---
+
+The [R-Ladies Lima](https://www.meetup.com/rladies-lima/) organization
+invited me to give a workshop about the [Shiny](https://shiny.rstudio.com/) package.
+
+In such workshop, we learnt the basic principles of the Shiny library,
+a framework for building interactive web applications using R.
