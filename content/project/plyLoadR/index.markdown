@@ -16,7 +16,7 @@ links:
 - icon: door-open
   icon_pack: fas
   name: website
-  url: https://www.youtube.com/watch?v=XbCk_-BOnOc
+  url: https://plyloadr-rgl-comparison-example.netlify.app/
 - icon: github
   icon_pack: fab
   name: code
